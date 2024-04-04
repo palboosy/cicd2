@@ -16,6 +16,10 @@ def get_btc_price():
     return bitcoin_price
 
 @app.route("/")
+def defaultfunc():
+    return "Hello, try using /btc in the URL."
+
+@app.route("/btc")
 def hello_world():
     return "Price of BTC @ " + strftime("%Y-%m-%d %H:%M:%S", gmtime()) + " : " + str(get_btc_price())
 
